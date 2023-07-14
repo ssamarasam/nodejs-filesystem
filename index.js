@@ -1,5 +1,6 @@
 const express = require("express");
 const httpServer = express();
+const PORT = process.env.PORT || 3030;
 
 const app = require("./app");
 
@@ -20,6 +21,6 @@ httpServer.get("/", (request, response) => {
 
 httpServer.use("/api", app);
 
-httpServer.listen(5000, "localhost", () => {
-  console.log("Server started at port 5000");
+httpServer.listen(PORT, () => {
+  console.log(`Server started at port ${PORT}`);
 });
